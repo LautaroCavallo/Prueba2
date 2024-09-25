@@ -1,0 +1,356 @@
+/* Estilos Globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f3f4f6;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #20395c;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* Estilos de Navegación (Header) */
+.navbar {
+    background-color: #20395c;
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    width: 120px;
+}
+
+.navbar nav ul {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.navbar nav ul li a {
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+    color: #f0c674;
+}
+
+/* Menú hamburguesa */
+.hamburger-menu {
+    display: none; /* El ícono de menú hamburguesa solo aparece en pantallas móviles */
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    transition: all 0.3s;
+}
+
+.menu-toggle {
+    display: none; /* Ocultar checkbox por defecto */
+}
+
+/* Estilos para cuando el menú está activo en móviles */
+.menu-toggle:checked ~ nav ul {
+    display: flex;
+    flex-direction: column;
+    background-color: #20395c;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 1;
+}
+
+/* Mostrar el menú normalmente en pantallas grandes */
+@media (min-width: 769px) {
+    nav ul {
+        display: flex; /* Mostrar el menú horizontalmente en pantallas grandes */
+    }
+
+    .hamburger-menu {
+        display: none; /* Ocultar el menú hamburguesa en pantallas grandes */
+    }
+}
+
+/* Mostrar el menú hamburguesa en pantallas pequeñas */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block; /* Mostrar menú hamburguesa en pantallas pequeñas */
+    }
+
+    nav ul {
+        display: none; /* Ocultar el menú por defecto en móviles */
+    }
+
+    .menu-toggle:checked ~ nav ul {
+        display: flex; /* Mostrar el menú cuando se activa el checkbox */
+        flex-direction: column;
+    }
+}
+
+/* Estilos para Secciones */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 0;
+    background-color: white;
+}
+
+.hero .hero-content {
+    max-width: 50%;
+}
+
+.hero .cta-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.hero .cta-btn:hover {
+    background-color: #f0c674;
+}
+
+.hero .hero-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para las Páginas del Sitio */
+.services, .soporte-section, .nosotros-section {
+    padding: 50px 0;
+    background-color: #ffffff;
+}
+
+.services h1, .soporte-section h1, .nosotros-section h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.service-box, .soporte-box, .team .card {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    text-align: center;
+    flex: 1;
+}
+
+.service-box img, .soporte-box img, .team .card img {
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+.service-box h3, .soporte-box h3, .team .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.team {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.soporte-icons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.soporte-box {
+    width: 30%;
+}
+
+.btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #f0c674;
+}
+
+/* Detalles de Soporte */
+.soporte-detail {
+    padding: 50px 0;
+    background-color: #f0f0f0;
+}
+
+.soporte-detail img {
+    width: 80px;
+    margin-bottom: 15px;
+}
+
+.soporte-detail p {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Estilos para la sección del Portafolio */
+.services-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.service-box {
+    width: 30%;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.logo-container img {
+    width: 100px;
+    margin: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #20395c;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+.github-link {
+    font-size: 24px;
+    color: white;
+}
+
+.github-link:hover {
+    color: #f0c674;
+}
+
+/* Estilos para el popup */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover, .close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero .hero-content {
+        max-width: 100%;
+    }
+
+    .hero .hero-image img {
+        margin-top: 20px;
+    }
+
+    .services-container, .soporte-icons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-box, .soporte-box {
+        width: 80%;
+    }
+
+    .team {
+        flex-direction: column;
+        align-items: center;
+    }
+}
